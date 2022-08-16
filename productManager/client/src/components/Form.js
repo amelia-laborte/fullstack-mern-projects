@@ -17,6 +17,21 @@ const FormData = (props) => {
         console.log(newProduct)
     };
 
+return(
+    <form onSubmit = {createProduct}>
+        <div>
+            <label>Title:</label>
+        </div>
+        <div>
+            <label>Price:</label>
+        </div>
+        <div>
+            <label>Description:</label>
+        </div>
+
+    </form>
+
+);
 };
 
 
