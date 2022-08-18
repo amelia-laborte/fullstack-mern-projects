@@ -1,13 +1,11 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
 const FormData = (props) => {
 
     const [title, setTitle] = useState ("")
     const [price, setPrice] = useState ("")
     const [description, setDescription] = useState ("")
 
-    const navigate = useNavigate()
 
     const createProduct = (e) => {
         e.prevent.default();
@@ -17,7 +15,6 @@ const FormData = (props) => {
             description
         }).then((res)=>{
             console.log(res)
-            navigate ('/')
         }).catch((err)=>{
             console.log(err)
         })
