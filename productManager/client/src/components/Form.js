@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-const FormData = (props) => {
+
+const FormData = () => {
 
     const [title, setTitle] = useState ("")
     const [price, setPrice] = useState ("")
     const [description, setDescription] = useState ("")
 
-
-    const createProduct = (e) => {
+    const submitHandler = (e) => {
         e.prevent.default();
         axios.post("http://localhost:8000/api/products/create",{
             title,
@@ -19,24 +19,24 @@ const FormData = (props) => {
             console.log(err)
         })
 
-    };
+    }
 
 return(
-    <form onSubmit = {createProduct}>
+    <form onSubmit = {submitHandler}>
         <div>
             <h1>Product Manager</h1>
             <label>Title:</label>
-            <input type= "text" value={title} onChange ={(e) => 
+            <input type= "text" onChange ={(e) => 
                 {setTitle(e.target.value)}}></input>
         </div>
         <div>
             <label>Price:</label>
-            <input type= "text" value={price} onChange ={(e) => 
+            <input type= "text" onChange ={(e) => 
                 {setPrice(e.target.value)}}></input>
         </div>
         <div>
             <label>Description:</label>
-            <input type= "text" value={description} onChange ={(e) => 
+            <input type= "text" onChange ={(e) => 
                 {setDescription(e.target.value)}}></input>
         </div>
         <input type ="Submit" value="Create Product"></input>
