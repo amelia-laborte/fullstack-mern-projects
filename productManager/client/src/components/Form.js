@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 
-const FormData = () => {
+const Form = () => {
 
     const [title, setTitle] = useState ("")
     const [price, setPrice] = useState ("")
     const [description, setDescription] = useState ("")
 
     const submitHandler = (e) => {
-        e.prevent.default();
+        e.preventDefault();
         axios.post("http://localhost:8000/api/products/create",{
             title,
             price,
@@ -46,4 +46,4 @@ return(
 };
 
 
-export default FormData;
+export default Form;
