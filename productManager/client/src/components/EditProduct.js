@@ -15,15 +15,15 @@ const EditProduct = () => {
         setPrice(res.data.price);
         setDescription(res.data.description);
       })
-      .catch((err) => {});
-  }, []);
+      .catch((err) => {})
+  }, [])
 
 
-  const navigate = useNavigate;
   
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
+  const navigate = useNavigate();
 
 
   const editHandler = (e) => {
@@ -35,12 +35,13 @@ const EditProduct = () => {
         description,
       })
       .then((res) => {
-        navigate("/oneproduct");
+        console.log(res)
+        navigate("/productlist")
       })
       .catch((err) => {
-        // console.log(err);
-      });
-  };
+        console.log(err)
+      })
+  }
 
   return (
     <div>
@@ -65,7 +66,7 @@ const EditProduct = () => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           ></input>
-        <button>Update Product</button>
+        <input type ="Submit" value="Update Product"></input>
       </form>
 
     </div>
