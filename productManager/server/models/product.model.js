@@ -7,15 +7,18 @@ const ProductSchema = mongoose.Schema(
     title: {
       type: String,
       required: [true, "Title for your product is required"],
+      minlength:[3, 'Must be 3 characters long']
       //you can add min or max length characters as maxlength:[2, `whatever error message you want to be generated']
     },
     price: {
       type: String,
       required: [true, "Your product needs a price"],
+      minlength:[3, 'Must be 3 characters long']
     },
     description: {
       type: String,
       required: [true, "A description of your product is required"],
+      minlength:[3, 'Must be 3 characters long']
     },
     //If you want to store an image, just store the link because the actual image should not be stored in a database.
     //If you want to have a default option you write it like default: `N/A`
