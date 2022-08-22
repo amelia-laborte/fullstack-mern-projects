@@ -24,6 +24,8 @@ const EditProduct = () => {
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const navigate = useNavigate();
+  const [errors, setErrors] = useState({})
+
 
 
   const editHandler = (e) => {
@@ -40,6 +42,7 @@ const EditProduct = () => {
       })
       .catch((err) => {
         console.log(err)
+        setErrors(err.response.data.error)
       })
   }
 
@@ -48,24 +51,27 @@ const EditProduct = () => {
 
       <form onSubmit={editHandler}>
           <h1>Product</h1>
-          <label>Title:</label>
+          <label>Title:{errors.title ?<span> {errors.title.message}</span> : null}</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-          ></input>
-          <label>Price:</label>
+            ></input>
+            
+          <label>Price:{errors.price ?<span> {errors.price.message}</span> : null}</label>
           <input
             type="text"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-          ></input>
-          <label>Description:</label>
+            ></input>
+            
+          <label>Description:{errors.description ?<span> {errors.description.message}</span> : null}</label>
           <input
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-          ></input>
+            ></input>
+            
         <input type ="Submit" value="Update Product"></input>
       </form>
 
