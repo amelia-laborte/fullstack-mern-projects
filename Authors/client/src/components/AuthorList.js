@@ -33,10 +33,10 @@ import { Link } from "react-router-dom";
                 {
                     list.map((author)=>(
                         <div>
-                            <h1><Link to={`/oneauthor/${author._id}`}>{author.authorName}</Link></h1>
                             <h2>{author.authorName}</h2>
+                            <p><Link to={`/editauthor/${author._id}`}>Edit Author</Link></p>
                             <button onClick={()=>deleteHandler(author._id)}>Delete Author</button>
-                            
+
                         </div>
 
                     ))

@@ -44,15 +44,15 @@ const EditAuthor = () => {
     <div>
 
       <form onSubmit={editHandler}>
-          <h1>Product</h1>
-          <label>Title:{errors.authorName ?<span> {errors.authorName.message}</span> : null}</label>
+          <h1>Favorite Author</h1>
+          <label>Author Name:{errors.authorName ?<span> {errors.authorName.message}</span> : null}</label>
           <input
             type="text"
             value={authorName}
             onChange={(e) => setAuthorName(e.target.value)}
             ></input>
             
-        <input type ="Submit" value="Update Product"></input>
+        <input type ="Submit" value="Update Author"></input>
       </form>
 
     </div>

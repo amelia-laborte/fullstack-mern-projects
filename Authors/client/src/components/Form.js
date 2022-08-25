@@ -27,12 +27,12 @@ const Form = () => {
 return(
     <form onSubmit = {submitHandler}>
         <div>
-            <h1>Product</h1>
-            <label>Title:</label>
+            <h1>Favorite Authors</h1>
+            <label>Name:</label>
             <input type= "text" onChange ={(e) => setAuthorName(e.target.value)}></input>
             <br></br>{errors.authorName ?<span> {errors.authorName.message}</span> : null}
         </div>
-        <input type ="Submit" value="Create Product"></input>
+        <input type ="Submit" value="Add Author"></input>
     </form>
 
 );
